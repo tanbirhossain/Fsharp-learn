@@ -206,11 +206,16 @@
 
 //List
 let list1 = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
-printfn "The list: %A" list1
+printfn "The list1: %A" list1
 
 let list2 = 1 :: 2 :: 3 :: []
-printfn "The list: %A" list2
+printfn "The list2: %A" list2
 
 let list3 = [1..10]
-printfn "The list: %A" list3
+printfn "The list3: %A" list3
 
+let list4 = ['a' .. 'm']
+printfn "The list4: %A" list4
+
+let list5 = List.init 5 (fun index -> (index, index * index, index * index * index))
+printfn "The list5: %A" list5
