@@ -266,9 +266,177 @@
 //printfn "The second list: %A" list2
 //printfn "The appened list: %A" list3
 
-let lt1 =["a";"b";"c"]
-let lt2 =["e";"f";"g"]
-let lt3 = lt1 @ lt2
-printfn "The first list: %A" lt1
-printfn "The second list: %A" lt2
-printfn "The appened list: %A" lt3
+//let lt1 =["a";"b";"c"]
+//let lt2 =["e";"f";"g"]
+//let lt3 = lt1 @ lt2
+//printfn "The first list: %A" lt1
+//printfn "The second list: %A" lt2
+//printfn "The appened list: %A" lt3
+
+//let list1 = [9.0; 0.0; 2.0; -4.54; 11.2; 8.0; -10.0]
+//printfn "The list: %A" list1
+
+//let list2 = List.sort list1
+//printfn "The sorted list: %A" list2
+
+//let s = List.sum list1
+//let avg = List.average list1
+//printfn "The sum: %f" s
+//printfn "The average: %f" avg
+
+
+//let sumList list = List.fold ( fun acc elem -> acc + elem) 0 list
+//printfn "Sum of the elements of list %A is %d." [ 1..10](sumList[1..10])
+
+
+//let seq1 = seq {1..10}
+//printfn "The Sequence: %A" seq1
+
+//let seq2 = seq {1..5..50}
+//printfn "The Sequence: %A" seq2
+
+//let seq3 = seq {50 .. -5 .. 0}
+//printfn "The Sequence:　%A" seq3
+
+//let seq4 = seq { for a in 1..10 do yield a,a*a,a*a*a}
+//printfn "The Sequence: %A" seq4
+
+//let isprime n =
+//    let rec check i =
+//        i > n/2 || (n%i<>0 && check(i+1))
+//    check 2
+
+//let primeIn50 = seq { for n in 1..50 do if isprime n then yield n }
+//for x in primeIn50 do
+//    printfn "%d" x
+
+//let seq2 = Seq.init 5 (fun n-> n * 3)
+//Seq.iter (fun i-> printf "%d " i) seq2
+//printfn ""
+
+//let seq3 =[| 2 ..2.. 200 |] |> Seq.ofArray
+//Seq.iter (fun i-> printf "%d" i) seq3
+//printfn ""
+
+//let set1 = Set.empty.Add(3).Add(5).Add(7).Add(9)
+//printfn "The new set: %A" set1
+
+//let weekdays = Set.ofList ["mon"; "tunes";"wed";"thurs";"fri"]
+//printfn "The list set; %A" weekdays
+
+//let set2 = Set.ofSeq [1..2..10]
+//printfn "The sequence set: %A" set2
+
+//let a = Set.ofSeq [1..2..20 ]
+//let b = Set.ofSeq [1..3..20]
+//let c = Set.intersect a b
+//let d = Set.union a b
+//let e = Set.difference a b
+
+//printf "Set a: "
+//Set.iter (fun x-> printf "%O " x) a
+//printfn""
+
+//printf "Set b: "
+//Set.iter (fun x-> printf "%O " x) b
+//printfn""
+
+//printfn "Set c = set intersect of a and b : "
+//Set.iter (fun x -> printf "%O " x) c
+//printfn""
+
+//printfn "Set d = set union of a and b : "
+//Set.iter (fun x -> printf "%O " x) d
+//printfn""
+
+//printfn "Set e = set difference of a and b : "
+//Set.iter (fun x -> printf "%O " x) e
+//printfn""
+
+//let students =
+//    Map.empty.
+//        Add("Zara Ali", "1501").
+//        Add("Robin Sahoo", "1503").
+//        Add("Rishita Gupta", "1502");;
+//printfn "Map - students: %A" students
+//printfn "Map - students counts: %d" students.Count
+
+//(* finding the registration number of a student *)
+//let found = students.TryFind "Rishita Gupta"
+//match found with 
+//| Some x -> printfn "Found %s." x
+//| None -> printfn "Did not found the specified value."
+
+
+//type choice = 
+//    | Yes
+//    | No
+
+
+//let x = Yes
+//let y = No
+
+//let main() =
+//   printfn "x: %A" x
+//   printfn "y: %A" y
+//main()
+
+//type VoltageState = 
+//    | High
+//    | Low
+
+//let toggleSwitch = function 
+//    | High -> Low
+//    | Low -> High
+
+//let main() =
+//    let on = High
+//    let off = Low
+//    let change = toggleSwitch off
+
+//    printfn "Switch on state: %A" on
+//    printfn "Switch on state: %A" off
+//    printfn "Toggle off: %A" change
+//    printfn "Toggle the Change state: %A" (toggleSwitch change)
+//main()
+
+//Mutable Data
+//open System
+//type studentData = 
+//    {
+//        ID : int;
+//        mutable IsRegistered :bool;
+//        mutable RegisteredText: string;
+//    }
+
+//let getStudent id = 
+//    { ID = id;
+//        IsRegistered = false;
+//        RegisteredText = null; }
+
+//let registerStudents (students: studentData list) =
+//    students |> List.iter(fun st ->
+//        st.IsRegistered <- true
+//        st.RegisteredText <- sprintf "Registered %s" (DateTime.Now.ToString("hh:mm:ss"))
+//        Threading.Thread.Sleep(1000)
+//    )
+//let printData (students : studentData list) =
+//    students |> List.iter (fun x-> printfn "%A" x)
+
+//let main() =
+//    let students = List.init 3 getStudent
+//    printfn "Before Process:"
+//    printData students
+
+//    printfn "After process:"
+//    registerStudents students
+//    printData students
+//    Console.ReadKey(true) |> ignore
+
+//main()
+
+//using semicolon separator
+let array1 = [| 1;2;3;4;5;6 |]
+for i in 0..array1.Length - 1 do
+    printf "%d " array1.[i]
+printf " "
