@@ -205,17 +205,70 @@
 
 
 //List
-let list1 = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
-printfn "The list1: %A" list1
+//let list1 = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
+//printfn "The list1: %A" list1
 
-let list2 = 1 :: 2 :: 3 :: []
-printfn "The list2: %A" list2
+//let list2 = 1 :: 2 :: 3 :: []
+//printfn "The list2: %A" list2
 
-let list3 = [1..10]
-printfn "The list3: %A" list3
+//let list3 = [1..10]
+//printfn "The list3: %A" list3
 
-let list4 = ['a' .. 'm']
-printfn "The list4: %A" list4
+//let list4 = ['a' .. 'm']
+//printfn "The list4: %A" list4
 
-let list5 = List.init 5 (fun index -> (index, index * index, index * index * index))
-printfn "The list5: %A" list5
+//let list5 = List.init 5 (fun index -> (index, index * index, index * index * index))
+//printfn "The list5: %A" list5
+
+//let list6 = [ for a in 1..10 do yield (a * a)]
+//printfn "The list: %A" list6
+
+//let list7 = [ for a in 1..100 do
+//                if a % 3 = 0 && a % 5 = 0 then 
+//                    yield a
+//            ]
+
+//printfn "The list7: %A" list7
+
+//let list8 = [ for a in 1 .. 3 do
+//                   yield! [a .. a + 3]
+//            ]
+//printfn "The list8: %A" list8
+
+
+//List Properties
+//let list1 = [2;4;5;6;8;10;12;14;16]
+
+// Use of Properties
+//printfn "list1.IsEmpty is %b" (list1.IsEmpty)
+//printfn "list1.Length is %d" (list1.Length)
+//printfn "list1.Head is %d" (list1.Head)
+//printfn "list1.Tail.Head is %d" (list1.Tail.Head)
+//printfn "list1.Tail.Tail.Head is %d" (list1.Tail.Tail.Head)
+//printfn "list1.Item(1) is %d" (list1.Item(1))
+
+//let list1 = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
+//printfn "The list: %A" list1 
+//let list2 = list1 |> List.filter (fun x -> x % 2 = 0);;
+//printfn "The Filtered list: %A" list2
+
+//let list1 = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
+//printfn "The list: %A" list1
+//let list2 = list1 |> List.map (fun x -> (x*x).ToString());;
+//printfn "The Mapped list: %A" list2
+
+//List.append
+//let list1 = [1;2;3;4;5]
+//let list2 = [6;7;8;9;10]
+//let list3 = List.append list1 list2
+
+//printfn "The first list: %A" list1
+//printfn "The second list: %A" list2
+//printfn "The appened list: %A" list3
+
+let lt1 =["a";"b";"c"]
+let lt2 =["e";"f";"g"]
+let lt3 = lt1 @ lt2
+printfn "The first list: %A" lt1
+printfn "The second list: %A" lt2
+printfn "The appened list: %A" lt3
