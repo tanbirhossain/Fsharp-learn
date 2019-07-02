@@ -478,3 +478,24 @@
 //dict.Add("1501","Zara Ali")
 //dict.Add("1502","Rishita Gupta")
 //printfn "Dictionary - student: %A" dict.Keys
+
+//open System 
+//let main() =
+//   Console.Write("What's your name? ")
+//   let name = Console.ReadLine()
+//   Console.Write("Hello, {0}\n", name)
+//   Console.WriteLine(System.String.Format("Big Greetings from {0} and {1}", "TutorialsPoint", "Absoulte Classes"))
+//   Console.WriteLine(System.String.Format("|{0:yyyy-MMM-dd}|", System.DateTime.Now))
+//main()
+
+//open System.IO
+//File.WriteAllText("test.txt", "Hello There\n Welcome to:\n Tutorial Point")
+//let msg = File.ReadAllText("test.txt")
+//printfn "%s" msg
+
+(* Generic Function *)
+let printFunction (x: 'a) (y: 'a) =
+   printfn "%A %A" x y
+
+printFunction 10.0 20.0
+
