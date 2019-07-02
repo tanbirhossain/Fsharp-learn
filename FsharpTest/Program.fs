@@ -494,8 +494,53 @@
 //printfn "%s" msg
 
 (* Generic Function *)
-let printFunction (x: 'a) (y: 'a) =
-   printfn "%A %A" x y
+//let printFunction (x: 'a) (y: 'a) =
+//   printfn "%A %A" x y
 
-printFunction 10.0 20.0
+//printFunction 10.0 20.0
 
+// Declaration of an enumeration.
+//type  Days = 
+//    | Sun = 0
+//    | Mon = 1
+//    | Tues = 2
+//    | Wed = 3
+//    | Thurs = 4
+//    | Fri = 5
+//    | Sat = 6
+
+//// Use of an enumeration.
+//let weekend1 : Days = Days.Sat
+//let weekend2 : Days = Days.Sun
+
+//printfn "Satarday: %A" weekend1
+
+
+//Pattern Matching
+//let printSeason month =
+//    match month with
+//    | "December" | "January" | "February" -> printfn "Winter"
+//    | "March" | "April"  -> printfn "Spring"
+//    | "May" | "June"  -> printfn "Summer"
+//    | "July" | "August" -> printfn "Rainy"
+//    |"September"| "October" | "November" -> printfn "Autumn"
+//    |_-> printfn "Season depends on month!"
+
+//printSeason "February"
+//printSeason "April"
+//printSeason "November"
+//printSeason "July"
+
+let getRate = function
+    | "potato"|"potato1" -> 10.00
+    | "brinjal" -> 20.50
+    | "cauliflower" -> 21.00
+    | "cabbage" -> 8.75
+    | "carrot" -> 15.00
+    | _ -> nan (* nan is a special value meaning "not a number" *)
+
+printfn "%g"(getRate "potato1")
+printfn "%g"(getRate "brinjal")
+printfn "%g"(getRate "cauliflower")
+printfn "%g"(getRate "cabbage")
+printfn "%g"(getRate "carrot")
