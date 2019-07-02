@@ -558,4 +558,4 @@ let myfunction x y =
         | Error2(str, i) -> printfn "Error2 %s %d" str i
 
 myfunction 20 10
-my
+myfunction 5 5
