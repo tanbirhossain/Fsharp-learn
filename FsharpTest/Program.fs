@@ -471,3 +471,10 @@
 //booksList.Add("Narnia")
 
 //booksList |> Seq.iteri (fun index item -> printfn "%i: %s" index booksList.[index])
+
+
+//open System.Collections.Generic
+//let dict = new Dictionary<string, string>()
+//dict.Add("1501","Zara Ali")
+//dict.Add("1502","Rishita Gupta")
+//printfn "Dictionary - student: %A" dict.Keys
