@@ -531,16 +531,31 @@
 //printSeason "November"
 //printSeason "July"
 
-let getRate = function
-    | "potato"|"potato1" -> 10.00
-    | "brinjal" -> 20.50
-    | "cauliflower" -> 21.00
-    | "cabbage" -> 8.75
-    | "carrot" -> 15.00
-    | _ -> nan (* nan is a special value meaning "not a number" *)
+//let getRate = function
+//    | "potato"|"potato1" -> 10.00
+//    | "brinjal" -> 20.50
+//    | "cauliflower" -> 21.00
+//    | "cabbage" -> 8.75
+//    | "carrot" -> 15.00
+//    | _ -> nan (* nan is a special value meaning "not a number" *)
 
-printfn "%g"(getRate "potato1")
-printfn "%g"(getRate "brinjal")
-printfn "%g"(getRate "cauliflower")
-printfn "%g"(getRate "cabbage")
-printfn "%g"(getRate "carrot")
+//printfn "%g"(getRate "potato1")
+//printfn "%g"(getRate "brinjal")
+//printfn "%g"(getRate "cauliflower")
+//printfn "%g"(getRate "cabbage")
+//printfn "%g"(getRate "carrot")
+
+exception Error1 of string
+// Using a tuple as the argument type.
+exception Error2 of string * int
+
+let myfunction x y = 
+    try 
+        if x = y then raise (Error1("Equal Number Error"))
+        else raise (Error2 ("Error Not detected",100))
+    with
+        | Error1(str) -> printfn "Error1 %s" str
+        | Error2(str, i) -> printfn "Error2 %s %d" str i
+
+myfunction 20 10
+my
