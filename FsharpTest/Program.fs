@@ -681,36 +681,93 @@
 
 
 //Abstract 
-[<AbstractClass>]
-type Person(name) =
-    member x.Name = name
-    abstract Greet : unit -> unit
+//[<AbstractClass>]
+//type Person(name) =
+//    member x.Name = name
+//    abstract Greet : unit -> unit
 
-type Student(name,studentID :int) =
-    inherit Person(name)
-    let mutable _GPA = 0.0
-    member x.StudentID = studentID
-    member x.GPA
-        with get() = _GPA
-        and set value =_GPA <- value
-    override x.Greet() = printfn "Student %s" x.Name
+//type Student(name,studentID :int) =
+//    inherit Person(name)
+//    let mutable _GPA = 0.0
+//    member x.StudentID = studentID
+//    member x.GPA
+//        with get() = _GPA
+//        and set value =_GPA <- value
+//    override x.Greet() = printfn "Student %s" x.Name
 
-type Teacher(name, expertise:string) = 
-    inherit Person(name)
-    let mutable _salary = 0.0
-    member x.Salary
-        with get() = _salary
-        and set value = _salary <- value
-    member x.Expertise = expertise
-    override x.Greet() = printfn "Teacher %s." x.Name
-
-
-
-//using the subclasses
-
-let st = new Student("Zara",1234)
-let tr = new Teacher("Mariam", "Java")
+//type Teacher(name, expertise:string) = 
+//    inherit Person(name)
+//    let mutable _salary = 0.0
+//    member x.Salary
+//        with get() = _salary
+//        and set value = _salary <- value
+//    member x.Expertise = expertise
+//    override x.Greet() = printfn "Teacher %s." x.Name
 
 
-st.Greet()
-tr.Greet()
+
+////using the subclasses
+
+//let st = new Student("Zara",1234)
+//let tr = new Teacher("Mariam", "Java")
+
+
+//st.Greet()
+//tr.Greet()
+
+//type IPerson = 
+//    abstract Name : string
+//    abstract Enter : unit -> unit
+//    abstract Leave : unit -> unit
+
+//type Student(name : string, id : int) =
+//    member this.ID = id
+//    interface IPerson with
+//        member this.Name = name
+//        member this.Enter() = printfn "Student entering premises!"
+//        member this.Leave() = printfn "Student leaving premises!"
+
+//type StuffMember(name : string, id : int, salary : float) =
+//   let mutable _salary = salary
+
+//   member this.Salary
+//      with get() = _salary
+//      and set(value) = _salary <- value
+
+//   interface IPerson with
+//      member this.Name = name
+//      member this.Enter() = printfn "Stuff member entering premises!"
+//      member this.Leave() = printfn "Stuff member leaving premises!"
+
+//let s = new Student("Zara", 1234)
+//let st = new StuffMember("Rohit", 34, 50000.0)
+
+//(s :> IPerson).Enter()
+//(s :> IPerson).Leave()
+//(st :> IPerson).Enter()
+//(st :> IPerson).Leave()
+
+
+//open Arithmetic
+
+//let addRes = Arithmetic.add 25 9
+
+//printfn "%d" addRes
+
+
+
+namespace testing
+open Arithmetic
+module testmodule1 =
+   let testFunction x y =
+      printfn "Values from Module1: %A %A" x y
+module testmodule2 =
+   let testFunction x y =
+      printfn "Values from Module2: %A %A" x y
+    
+module usermodule =
+   do
+      testmodule1.testFunction ( "one", "two", "three" ) 150
+      testmodule2.testFunction (seq { for i in 1 .. 10 do yield i * i }) 200
+      let addRes =  Arithmetic.add 25 9
+      printfn "%d" addRes

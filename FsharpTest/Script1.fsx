@@ -1,4 +1,12 @@
-﻿
-let seq1 = seq {1..10}
-printfn "The Sequence: %A" seq1
-//let seq2 = seq{ 1..5..50}
+﻿module Script1
+let add x y =
+    x + y
+
+let sub x y = 
+    x - y
+let mult x y =
+    x * y
+
+let div x y =
+    x / y 
+
