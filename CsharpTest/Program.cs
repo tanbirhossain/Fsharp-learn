@@ -3,14 +3,42 @@ using System.Collections.Generic;
 
 namespace CsharpTest
 {
+
+    public interface ILogger
+    {
+        void Log(string info);
+        virtual void LogInfo(string typeofInformation, string info)
+              => Console.Write(typeofInformation + " " + info);
+
+    }
+
+    public class TextLogger : ILogger
+    {
+
+        public void LogInfo(string typeofInformation, string info)
+          => Console.Write("Test class " + typeofInformation + " " + info);
+        public void Log(string info)
+            => Console.Write("In base Logger");
+    }
+
+
     class Program
     {
+
+
+
         // Basic C# functional programming
         static void Main(string[] args)
         {
-            Console.WriteLine(f2(f1(4, 5)));
-            Console.WriteLine(PrintList());
+
+            ILogger _logger = new TextLogger();
+            //_logger.Log("info");
+            _logger.LogInfo("onek type", "Prochur info");
+
+            //Console.WriteLine(f2(f1(4, 5)));
+            //Console.WriteLine(PrintList());
         }
+        #region Function Demo
 
         static Func<double, double, double> f1 = sqr;
         //static Func<double, double, double> f1 = (x, y) => sqr(x);
@@ -29,6 +57,7 @@ namespace CsharpTest
             }
             yield return null;
         }
+        #endregion
     }
 
 }

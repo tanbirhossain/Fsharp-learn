@@ -545,17 +545,48 @@
 //printfn "%g"(getRate "cabbage")
 //printfn "%g"(getRate "carrot")
 
-exception Error1 of string
-// Using a tuple as the argument type.
-exception Error2 of string * int
+//exception Error1 of string
+//// Using a tuple as the argument type.
+//exception Error2 of string * int
 
-let myfunction x y = 
-    try 
-        if x = y then raise (Error1("Equal Number Error"))
-        else raise (Error2 ("Error Not detected",100))
-    with
-        | Error1(str) -> printfn "Error1 %s" str
-        | Error2(str, i) -> printfn "Error2 %s %d" str i
+//let myfunction x y = 
+//    try 
+//        if x = y then raise (Error1("Equal Number Error"))
+//        else raise (Error2 ("Error Not detected",100))
+//    with
+//        | Error1(str) -> printfn "Error1 %s" str
+//        | Error2(str, i) -> printfn "Error2 %s %d" str i
 
-myfunction 20 10
-myfunction 5 5
+//myfunction 20 10
+//myfunction 5 5
+
+ 
+//type Line = class
+//    val X1 : float
+//    val Y1 : float
+//    val X2 : float
+//    val Y2 : float
+
+//    new (x1, y1,x2,y2) as this =
+//        {
+//            X1 = x1; Y1 = y1; X2 = x2; Y2 =y2;
+//        }
+//        then 
+//           printfn " Creating Line: {(%g, %g),(%g, %g)}\nLength: %g"
+//            this.X1 this.Y1 this.X2 this.Y2 this.Length
+
+//    member x.Length =
+//        let sqr x = x * x
+//        sqrt(sqr(x.X1 - x.X2) + sqr(x.Y1 - x.Y2))
+//end
+//let aLine = new Line(1.0,1.0,4.0,5.0)
+
+//type Greeting(name) = class
+//    let data = name
+//    member this.PrintMessage() =
+//        printf "Hello %s\n" data
+//    end
+//let gtr = new Greeting("Zara")
+//gtr.PrintMessage()
+
+
